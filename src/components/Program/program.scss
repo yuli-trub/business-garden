@@ -1,0 +1,77 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.program {
+  padding: 2rem 1rem;
+
+  &__title-wrapper {
+    @include flex(space-between, center);
+    margin-bottom: 1rem;
+
+    .program__arrows-wrapper {
+      display: none;
+
+      @include desktop {
+        display: flex;
+        gap: 1rem;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $color-primary;
+  }
+
+  &__arrow {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+  }
+
+  &__content {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 1rem;
+    padding-bottom: 1rem;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__slide {
+    scroll-snap-align: start;
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    @include desktop {
+      flex: 0 0 calc(50% - 0.5rem);
+    }
+  }
+
+  &__dots {
+    @include flex(center, center);
+    gap: 6px;
+    margin-top: 0.5rem;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ccc;
+    transition: background 0.3s ease;
+
+    &.active {
+      background: $color-primary;
+    }
+  }
+}
