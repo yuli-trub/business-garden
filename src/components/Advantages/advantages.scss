@@ -1,0 +1,120 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.advantages {
+  padding: 2rem 1rem;
+
+  &__title-wrapper {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    .advantages__title {
+      font-size: 2rem;
+      color: $color-primary;
+    }
+
+    .advantages__title-underline {
+      margin-top: 0.5rem;
+      height: 8px;
+    }
+  }
+
+  &__list {
+    display: none;
+  }
+
+  // ----------------------------------
+  // Desktop version
+  // ----------------------------------
+  &__list--desktop {
+    display: none;
+
+    @include desktop {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  }
+
+  &__item {
+    background: #f9f9f9;
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+
+    h3 {
+      font-size: 1.1rem;
+      margin: 1rem 0 0.5rem;
+      color: $color-primary;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: $color-text;
+      white-space: pre-line; // preserves \n
+    }
+  }
+
+  &__image {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  // ----------------------------------
+  // Mobile scroll version
+  // ----------------------------------
+  &__list--mobile {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding-bottom: 1rem;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__slide {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+  }
+
+  // ----------------------------------
+  // Dot pagination
+  // ----------------------------------
+  &__dots {
+    @include flex(center, center);
+    margin-top: 1rem;
+    gap: 0.5rem;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ccc;
+    transition: background 0.3s ease;
+    cursor: pointer;
+
+    &.active {
+      background: $color-primary;
+    }
+  }
+}

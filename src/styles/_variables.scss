@@ -1,12 +1,15 @@
 // Color palette
-$color-primary: #003366;
-$color-accent: #ffe88c;
-$color-text: #333333;
+$color-primary: #304d6d;
+$color-accent: #21354b;
+$color-text: #304d6d;
 $color-bg: #ffffff;
-$color-border: #e5e5e5;
+$color-bg-secondary: #fcf6bd;
+$color-border: #f2f2f2;
+$color-border-dark: #dbdbdb;
+$color-border-extra-dark: #878787;
 
 // Fonts
-$font-base: "Inter", sans-serif;
+$font-main: "Montserrat", sans-serif;
 
 // Z-index levels
 $z-header: 1000;
