@@ -1,0 +1,63 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.hero {
+  text-align: left;
+  @include flex(space-between, center, row, 24px);
+  padding: 72px 16px 188px 16px;
+
+  @include mobile {
+    @include flex(center, center, column, 48px);
+    padding: 48px 16px;
+  }
+
+  &__content {
+    @include flex(center, center, column, 48px);
+
+    @include desktop {
+      @include flex(center, flex-start, column, 64px);
+      max-width: 670px;
+    }
+  }
+
+  &__text-wrap {
+    @include flex(center, flex-start, column, 32px);
+    @include mobile {
+      @include flex(center, flex-start, column, 16px);
+    }
+  }
+
+  &__title {
+    @include mobile {
+      font-weight: 500;
+      letter-spacing: -0.02rem;
+    }
+  }
+
+  &__cta {
+    @include button-style;
+  }
+
+  &__subtitle {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 140%;
+    letter-spacing: 0.01rem;
+
+    @include mobile {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+      letter-spacing: -0.02rem;
+    }
+  }
+
+  &__image {
+    max-width: 472px;
+    @include mobile {
+      max-height: 220px;
+      min-width: 300px;
+      object-position: center 3%;
+    }
+  }
+}

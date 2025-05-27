@@ -1,0 +1,99 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.about {
+  background-color: $color-primary;
+  &__wrapper {
+    @include flex(center, center, column, 36px);
+    @include mobile {
+      gap: 12px;
+    }
+  }
+
+  &__title-wrapper {
+    width: 100%;
+    color: $color-bg;
+    @include flex(center, flex-start, column, 16px);
+
+    @include mobile {
+      gap: 8px;
+    }
+  }
+
+  &__title-underline {
+    width: 210px;
+    margin-left: 16px;
+
+    @include mobile {
+      margin-left: 8px;
+      width: 100px;
+    }
+  }
+
+  &__image-wrapper {
+    width: 100%;
+    &--desktop {
+      height: 100%;
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      @include desktop {
+        display: none;
+      }
+    }
+  }
+
+  &__image {
+    height: 100%;
+
+    @include mobile {
+      max-height: 210px;
+      min-width: 288px;
+    }
+  }
+
+  &__text {
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include mobile {
+      @include flex(center, center, column, 16px);
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 2rem;
+    align-items: start;
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.info-block {
+  background-color: $color-border;
+  border-radius: 24px;
+  padding: 32px 16px;
+
+  @include flex(center, flex-start, column, 32px);
+
+  @include mobile {
+    max-width: 571px;
+    gap: 16px;
+  }
+
+  @include desktop {
+    padding: 32px 32px 48px 32px;
+  }
+}

@@ -49,55 +49,59 @@ const Header = () => {
         </div>
 
         {/* Mobile dropdown: only shown on mobile */}
-        <nav className={`header__nav-mobile ${menuOpen ? "open" : ""}`}>
-          <a
-            className="header__burger-link"
-            href="#about"
-            onClick={handleLinkClick}
-          >
-            О курсе
-          </a>
-          <a
-            className="header__burger-link"
-            href="#program"
-            onClick={handleLinkClick}
-          >
-            Программа
-          </a>
-          <a
-            className="header__burger-link"
-            href="#personal-track"
-            onClick={handleLinkClick}
-          >
-            Персональный трек
-          </a>
-          <a
-            className="header__burger-link"
-            href="#faq"
-            onClick={handleLinkClick}
-          >
-            FAQ
-          </a>
-          <a
-            className="header__burger-link"
-            href="#advantages"
-            onClick={handleLinkClick}
-          >
-            Наши преимущества
-          </a>
-
-          <div className="header__socials">
-            <a href="https://t.me/TrueTutoring" className="header__social-link">
-              <img src={TelegramIcon} alt="Telegram" />
+        <nav className={` header__nav-mobile ${menuOpen ? "open" : ""}`}>
+          <div className="header__nav-links">
+            <a
+              className="header__burger-link"
+              href="#about"
+              onClick={handleLinkClick}
+            >
+              О курсе
             </a>
             <a
-              href="https://wa.me/+79651016885"
-              className="header__social-link"
+              className="header__burger-link"
+              href="#program"
+              onClick={handleLinkClick}
             >
-              <img src={WhatsAppIcon} alt="WhatsApp" />
+              Программа
             </a>
-          </div>
+            <a
+              className="header__burger-link"
+              href="#personal-track"
+              onClick={handleLinkClick}
+            >
+              Персональный трек
+            </a>
+            <a
+              className="header__burger-link"
+              href="#faq"
+              onClick={handleLinkClick}
+            >
+              FAQ
+            </a>
+            <a
+              className="header__burger-link"
+              href="#advantages"
+              onClick={handleLinkClick}
+            >
+              Наши преимущества
+            </a>
 
+            <div className="header__socials">
+              <a
+                href="https://t.me/TrueTutoring"
+                className="header__social-link"
+              >
+                <img src={TelegramIcon} alt="Telegram" />
+              </a>
+              <a
+                href="https://wa.me/+79651016885"
+                className="header__social-link"
+              >
+                <img src={WhatsAppIcon} alt="WhatsApp" />
+              </a>
+            </div>
+          </div>
           <a href="#signup-form" className="header__btn">
             Записаться
           </a>

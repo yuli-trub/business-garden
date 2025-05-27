@@ -2,14 +2,13 @@
 @import "../../styles/mixins";
 
 .header {
-  width: 100%;
   background: $color-bg;
   z-index: $z-header;
-  padding-top: 28.5px;
+  padding: 14px 16px 0 16px;
 
   &__container {
     @include flex(space-between, center);
-    padding: 1rem 2rem;
+    padding: 1rem 0;
     max-width: 1200px;
     margin: 0 auto;
 
@@ -78,17 +77,18 @@
     }
   }
 
+  &__nav-links {
+    @include flex(space-between, center, column, 16px);
+    gap: 1rem;
+    padding: 0 2rem;
+    background: $color-bg;
+  }
   &__nav-mobile {
     overflow: hidden;
     max-height: 0;
     opacity: 0;
     transform: translateY(-10px);
     transition: all 0.5s ease;
-
-    @include flex(space-between, center, column, 16px);
-    gap: 1rem;
-    padding: 0 2rem;
-    background: $color-bg;
 
     &.open {
       max-height: 500px;

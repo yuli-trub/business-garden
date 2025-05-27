@@ -10,15 +10,30 @@ html {
 
 body {
   font-family: $font-main;
-  max-width: 1200px;
+  // max-width: 1164px;
   margin: 0 auto;
-  padding: 0 16px;
+  // padding: 0 16px;
   text-align: center;
   color: $color-primary;
   font-size: 18px;
 
   @include mobile {
     font-size: 12px;
+  }
+}
+
+section,
+header,
+footer {
+  padding: 0 16px;
+  margin: 0 auto;
+  max-width: 1164px;
+}
+
+section {
+  padding: 100px 16px;
+  @include mobile {
+    padding: 48px 16px;
   }
 }
 ul {
@@ -29,6 +44,7 @@ h1 {
   font-size: 90px;
 
   font-weight: 600;
+  margin: 0;
 
   @include mobile {
     font-size: 40px;
@@ -37,6 +53,8 @@ h1 {
 h2 {
   font-size: 60px;
   font-weight: 500;
+  text-align: left;
+  margin: 0;
 
   @include mobile {
     font-size: 28px;
@@ -45,11 +63,20 @@ h2 {
 h3 {
   font-size: 32px;
   font-weight: 500;
+  margin: 0;
+  text-align: left;
 
   @include mobile {
     font-size: 18px;
     font-weight: 400;
   }
+}
+
+p {
+  margin: 0;
+  letter-spacing: -0.02rem;
+  line-height: 140%;
+  text-align: left;
 }
 
 button {
@@ -89,4 +116,12 @@ a {
 
 li {
   list-style: none;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 24px;
 }
