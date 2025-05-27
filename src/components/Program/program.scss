@@ -2,32 +2,35 @@
 @import "../../styles/mixins";
 
 .program {
-  padding: 2rem 1rem;
+  background-color: $color-border;
+  border-radius: 48px;
+  padding: 100px;
+
+  @include mobile {
+    padding: 48px 16px;
+  }
 
   &__title-wrapper {
     @include flex(space-between, center);
-    margin-bottom: 1rem;
+    margin-bottom: 64px;
 
-    .program__arrows-wrapper {
-      display: none;
-
-      @include desktop {
-        display: flex;
-        gap: 1rem;
-      }
+    @include mobile {
+      margin-bottom: 32px;
     }
   }
 
-  &__title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: $color-primary;
+  &__arrows-wrapper {
+    @include flex(center, center, row, 32px);
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &__arrow {
     cursor: pointer;
-    width: 24px;
-    height: 24px;
+    width: 72px;
+    height: auto;
   }
 
   &__content {
@@ -35,9 +38,11 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    gap: 1rem;
-    padding-bottom: 1rem;
+    gap: 24px;
 
+    @include mobile {
+      gap: 8px;
+    }
     &::-webkit-scrollbar {
       display: none;
     }
@@ -45,11 +50,45 @@
 
   &__slide {
     scroll-snap-align: start;
-    flex: 0 0 100%;
-    max-width: 100%;
+    flex: 0 0 calc(50% - 0.5rem);
 
-    @include desktop {
-      flex: 0 0 calc(50% - 0.5rem);
+    max-width: 100%;
+    background: $color-bg;
+    border-radius: 24px;
+    max-width: 505px;
+
+    @include flex(center, flex-start, column, 16px);
+    padding: 32px;
+
+    @include mobile {
+      padding: 32px 16px;
+      max-width: 258px;
+      flex: 0 0 100%;
+    }
+  }
+
+  &__item-title {
+    min-height: 80px;
+    @include mobile {
+      height: 50px;
+    }
+  }
+  &__item-description {
+    min-height: 135px;
+
+    @include mobile {
+      height: 120px;
+    }
+  }
+  &__item-highlight {
+    background-color: $color-bg-secondary;
+    border-radius: 24px;
+    padding: 16px 32px;
+    min-height: 140px;
+
+    @include mobile {
+      height: 102px;
+      padding: 16px;
     }
   }
 

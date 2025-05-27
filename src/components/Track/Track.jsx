@@ -1,35 +1,53 @@
 import "./track.scss";
 import hatIcon from "../../assets/hat-icon.svg";
-import trackImage from "../../assets/track-image.svg";
+import boardIcon from "../../assets/board-icon.svg";
+import cupIcon from "../../assets/cup-icon.svg";
+import museumIcon from "../../assets/museum-icon.svg";
+
+import trackImage from "../../assets/track-image.png";
 
 const Track = () => {
+  const items = [
+    {
+      title: "Предпринимательское мышление и маркетинг",
+      icon: hatIcon,
+    },
+    {
+      title: "Основы управления проектами и лидерство",
+      icon: cupIcon,
+    },
+    {
+      title: "Интерактивные задания и проектная работа",
+      icon: boardIcon,
+    },
+    {
+      title: "Финансовая и юридическая грамотность",
+      icon: museumIcon,
+    },
+  ];
+
   return (
-    <div className="track">
-      <h2 className="track__title">Персональный трек</h2>
+    <section className="track">
+      <h2 className="track__title">Что вас ждет?</h2>
       <div className="track__content">
         <ul className="track__benefits">
-          <li>
-            <p>Предпринимательское мышление и маркетинг</p>
-            <img src={hatIcon} alt="Hat Icon" className="track__icon" />
-          </li>
-          <li>
-            <p>Основы управления проектами и лидерство</p>
-            <img src={hatIcon} alt="Hat Icon" className="track__icon" />
-          </li>
-          <li>
-            <p>Интерактивные задания и проектная работа</p>
-            <img src={hatIcon} alt="Hat Icon" className="track__icon" />
-          </li>
-          <li>
-            <p>Финансовая и юридическая грамотность</p>
-            <img src={hatIcon} alt="Hat Icon" className="track__icon" />
-          </li>
+          {items.map(({ title, icon }, index) => (
+            <li
+              key={title}
+              className={`track__benefit ${
+                index % 2 === 0 ? "track__benefit--even" : "track__benefit--odd"
+              }`}
+            >
+              <p>{title}</p>
+              <img src={icon} alt={title} className="track__icon" />
+            </li>
+          ))}
         </ul>
-        <div className="track__image-wrapper track__image-wrapper--mobile">
+        <div className="track__image-wrapper">
           <img src={trackImage} alt="Student" className="track__image" />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

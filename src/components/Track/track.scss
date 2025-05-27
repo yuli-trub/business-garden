@@ -1,0 +1,66 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.track {
+  @include flex(center, stretch, column, 64px);
+
+  @include mobile {
+    gap: 32px;
+  }
+
+  &__content {
+    @include desktop {
+      @include flex(space-between, center, row, 20px);
+    }
+  }
+
+  &__benefits {
+    @include flex(center, center, column, 32px);
+
+    @include mobile {
+      gap: 16px;
+    }
+  }
+  &__benefit {
+    @include flex(space-between, center, row, 8px);
+    border-radius: 24px;
+    padding: 34px 32px;
+    width: 90%;
+    max-width: 506px;
+
+    @include mobile {
+      padding: 24px;
+      max-width: 296px;
+      gap: 8px;
+    }
+
+    &--even {
+      background-color: $color-bg-secondary;
+    }
+    &--odd {
+      background-color: $color-border;
+    }
+  }
+
+  &__icon {
+    max-height: 50px;
+    width: auto;
+    border-radius: 0px;
+    @include mobile {
+      max-height: 40px;
+    }
+  }
+
+  &__image-wrapper {
+    height: 540px;
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__image {
+    max-width: 570px;
+    height: 100%;
+    object-position: 13% center;
+  }
+}
