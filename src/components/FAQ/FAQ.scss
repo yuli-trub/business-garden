@@ -2,63 +2,81 @@
 @import "../../styles/mixins";
 
 .faq {
-  padding: 2rem 1rem;
-
   &__title {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: $color-primary;
+    margin-bottom: 40px;
+
+    @include mobile {
+      margin-bottom: 15px;
+    }
   }
 
   &__list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    @include flex(center, stretch, column, 32px);
+    @include mobile {
+      gap: 16px;
+    }
   }
 
   &__item {
-    background: #f2f2f2;
+    background: $color-border;
     border-radius: 12px;
     padding: 0;
+    border: 1px solid $color-border-dark;
+    transition: background 0.3s ease, visibility 0.3s ease;
+
+    .faq__answer {
+      visibility: hidden;
+      padding: 0 32px;
+      @include mobile {
+        padding: 0 16px;
+      }
+    }
 
     &.open {
+      background: $color-bg;
+
       .faq__answer {
+        visibility: visible;
         max-height: 500px;
-        padding: 1rem 1.5rem;
+        padding: 16px 32px;
+        @include mobile {
+          padding: 16px;
+        }
       }
     }
   }
 
   &__question {
-    width: 100%;
     text-align: left;
+    font-size: 24px;
     background: none;
     border: none;
-    padding: 1.2rem 1.5rem;
-    font-weight: bold;
-    font-size: 1rem;
+    padding: 16px 32px;
     cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: $color-text;
+
+    @include flex(space-between, flex-start, row);
+    @include mobile {
+      padding: 16px;
+      font-size: 18px;
+    }
   }
 
   &__icon {
     position: relative;
-    width: 24px;
-    height: 24px;
+    width: 40px;
+    height: 40px;
     flex-shrink: 0;
-    margin-left: 1rem;
+    margin-left: 0.8rem;
     transition: transform 0.3s ease;
     transform: rotate(0deg);
+    background: $color-bg;
+    border-radius: 100%;
 
-    // Apply the rotation
     &.open {
       transform: rotate(45deg);
+      background: $color-border;
     }
 
-    // Create the two bars of the "+"
     span {
       position: absolute;
       background: $color-primary;
@@ -68,7 +86,7 @@
 
     // Horizontal bar
     span:first-child {
-      width: 16px;
+      width: 25px;
       height: 2px;
       top: 50%;
       left: 50%;
@@ -78,7 +96,7 @@
     // Vertical bar
     span:last-child {
       width: 2px;
-      height: 16px;
+      height: 25px;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -88,9 +106,13 @@
   &__answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-    font-size: 0.95rem;
-    line-height: 1.5;
+    transition: max-height 0.3s ease, padding 0.2s ease;
     color: $color-text;
+    text-align: left;
+    font-size: 18px;
+
+    @include mobile {
+      font-size: 12px;
+    }
   }
 }

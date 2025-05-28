@@ -4,17 +4,23 @@ import "./FAQ.scss";
 const FAQ = () => {
   const faqs = [
     {
-      question: "Как записаться на курс?",
+      question: "Нужно ли иметь какие-либо предварительные знания?",
       answer:
         "Вы можете записаться на курс через форму на нашем сайте или связавшись с нами по телефону.",
     },
     {
-      question: "Какие темы охватывает курс?",
+      question: "На кого расчитан курс?",
       answer:
         "Курс охватывает темы маркетинга, финансов, предпринимательства и права.",
     },
     {
-      question: "Какова продолжительность курса?",
+      question: "На какой возраст рассчитан данный курс?",
+      answer:
+        "Курс рассчитан на 60 академических часов, распределённых на лето (3 месяца).",
+    },
+    {
+      question:
+        "Можно ли подстроить расписание занятий под график летних поездок ребёнка?",
       answer:
         "Курс рассчитан на 60 академических часов, распределённых на лето (3 месяца).",
     },
@@ -26,9 +32,10 @@ const FAQ = () => {
       prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
     );
   };
+
   return (
-    <section className="faq">
-      <h2 className="faq__title">Премиум-курс с гарантией осознанного роста</h2>
+    <section className="faq" id="faq">
+      <h2 className="faq__title">FAQ</h2>
 
       <div className="faq__list">
         {faqs.map((item, index) => (
@@ -36,7 +43,7 @@ const FAQ = () => {
             className={`faq__item ${openIndexes.includes(index) ? "open" : ""}`}
             key={index}
           >
-            <button
+            <div
               className="faq__question"
               onClick={() => toggle(index)}
               aria-expanded={openIndexes.includes(index)}
@@ -50,7 +57,7 @@ const FAQ = () => {
                 <span></span>
                 <span></span>
               </div>
-            </button>
+            </div>
             <div className="faq__answer">{item.answer}</div>
           </div>
         ))}
