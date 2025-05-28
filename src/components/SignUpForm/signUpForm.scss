@@ -1,0 +1,59 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  @include mobile {
+    @include flex(center, flex-start, column, 32px);
+  }
+
+  &__image {
+    min-height: 623px;
+
+    @include mobile {
+      min-height: 300px;
+    }
+  }
+
+  &__wrapper {
+    @include flex(space-between, flex-start, column, 32px);
+    @include mobile {
+      align-items: center;
+    }
+  }
+
+  &__title-wrapper {
+    @include flex(center, flex-start, column, 32px);
+
+    @include mobile {
+      gap: 16px;
+    }
+  }
+
+  &__form {
+    @include flex(center, flex-start, column, 16px);
+
+    @include mobile {
+      align-items: center;
+      gap: 8px;
+    }
+  }
+
+  &__button {
+    margin-top: 24px;
+  }
+
+  &__disclaimer {
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  &__error {
+    color: darkred;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+}

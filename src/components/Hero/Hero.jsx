@@ -16,7 +16,7 @@ const HeroSection = () => {
             экономики, социальной психологии и права.
           </p>
         </div>
-        <a href="#contact" className="hero__cta">
+        <a href="#signup-form" className="hero__cta">
           Записаться
         </a>
       </div>

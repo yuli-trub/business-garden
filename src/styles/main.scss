@@ -5,7 +5,7 @@ html {
   scroll-behavior: smooth;
   padding: 0;
   margin: 0;
-
+  box-sizing: border-box;
   scroll-padding-top: 30px;
 }
 body {
@@ -138,4 +138,16 @@ img {
   height: auto;
   object-fit: cover;
   border-radius: 24px;
+}
+
+input {
+  border: 1px solid $color-border-dark;
+  border-radius: 100px;
+  padding: 16px 32px;
+  color: $color-border-extra-dark;
+
+  min-width: 400px;
+  @include mobile {
+    min-width: 224px;
+  }
 }

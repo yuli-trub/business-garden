@@ -20,6 +20,7 @@ const SignUpForm = () => {
       /^\+7\s?\(?\d{3}\)?[\s\-]?\d{3}[\s\-]?\d{2}[\s\-]?\d{2}$/;
     if (!phoneRegex.test(phone)) {
       setError("Введите корректный номер телефона");
+      setPhone("");
       return false;
     }
     setError("");
@@ -59,19 +60,22 @@ const SignUpForm = () => {
   };
 
   return (
-    <section className="form">
+    <section className="form" id="signup-form">
       <img src={FormImage} alt="Форма регистрации" className="form__image" />
       <div className="form__wrapper">
-        <h2 className="form__title">О курсе</h2>
-        <p className="form__description">
-          Оставьте свой номер телефона и мы вам перезвоним в течение 15 минут
-        </p>
+        <div className="form__title-wrapper">
+          <h2 className="form__title">Записаться на тестирования</h2>
+          <p className="form__description">
+            Оставьте свой номер телефона и мы вам перезвоним в течение 15 минут
+          </p>
+        </div>
         <form onSubmit={handleSubmit} className="form__form">
           <input
             type="text"
             placeholder="Имя"
             className="form__input form__input--name"
             value={name}
+            required
             onChange={(e) => setName(e.target.value)}
           />
           <input
@@ -79,13 +83,15 @@ const SignUpForm = () => {
             placeholder="+7 (999) 999-99-99"
             className="form__input form__input--phone"
             value={phone}
+            required
             onChange={(e) => setPhone(e.target.value)}
           />
+          {error && <p className="form__error">{error}</p>}
           <button type="submit" className="form__button">
             Записаться
           </button>
         </form>
-        {error && <p className="form__error">{error}</p>}
+
         {success && <p className="form__success">{success}</p>}
         <p className="form__disclaimer">
           Нажимая кнопку «Отправить», вы соглашаетесь с условиями{" "}
