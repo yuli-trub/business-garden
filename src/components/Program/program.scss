@@ -5,9 +5,10 @@
   background-color: $color-border;
   border-radius: 48px;
   padding: 100px;
-
+  margin: 100px auto;
   @include mobile {
     padding: 48px 16px;
+    margin: 48px 0;
   }
 
   &__title-wrapper {
@@ -93,9 +94,8 @@
   }
 
   &__dots {
-    @include flex(center, center);
-    gap: 6px;
-    margin-top: 0.5rem;
+    @include flex(center, center, row, 8px);
+    margin-top: 24px;
 
     @include desktop {
       display: none;
@@ -103,8 +103,8 @@
   }
 
   &__dot {
-    width: 8px;
-    height: 8px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
     background: #ccc;
     transition: background 0.3s ease;

@@ -1,45 +1,56 @@
 import "./PersonalPath.scss";
+import TitleUnderline from "../../assets/title-underline-blue.svg";
+import BulbIcon from "../../assets/bulb-icon.svg";
+import PlusTextIcon from "../../assets/plus-text-icon.svg";
+import MessageIcon from "../../assets/message-icon.svg";
+import GlassesIcon from "../../assets/glasses-icon.svg";
+import QuestionIcon from "../../assets/question-text-icon.svg";
+import BatteryIcon from "../../assets/battery-icon.svg";
 
 const PersonalPath = () => {
   const steps = [
     {
       title: "Тестирование",
       description: "Первичное тестирование и обратная связь",
-      icon: "lab.svg",
+      icon: BulbIcon,
     },
     {
       title: "Формирование расписания",
       description:
         "Подбор преподавателя и формирование индивидуального учебного расписания",
-      icon: "calendar.svg",
+      icon: BatteryIcon,
     },
     {
       title: "Индивидуальные занятия",
       description: "Индивидуальные занятия в онлайн формате",
-      icon: "glasses.svg",
+      icon: GlassesIcon,
     },
     {
       title: "Постоянная обратная связь",
-      description: "Обратная связь для родителей каждые 30 дней...",
-      icon: "message.svg",
+      description:
+        "Обратная связь для родителей каждые 30 дней на основе выполнения домашних заданий и промежуточных тестирований",
+      icon: MessageIcon,
     },
     {
       title: "Собеседование и тестирование",
-      description: "Собеседование с экспертами и сдача теста",
-      icon: "test.svg",
+      description:
+        "Собеседование с экспертами и сдача контрольного тестирования",
+      icon: QuestionIcon,
     },
     {
       title: "Детализированные рекомендации",
-      description: "Обратная связь с рекомендациями...",
-      icon: "plus.svg",
+      description:
+        "Детализированная обратная связь с рекомендациями по дальнейшей программе развития, индивидуальное предложение для последующего обучения",
+      icon: PlusTextIcon,
     },
   ];
+
   return (
-    <section className="path">
+    <section className="path" id="personal-track">
       <div className="path__title-wrapper">
-        <h2 className="path__title">О курсе</h2>
+        <h2 className="path__title">Персональный трек</h2>
         <img
-          // src={titleunderline}
+          src={TitleUnderline}
           alt="title underline"
           className="path__title-underline"
         />
@@ -48,8 +59,16 @@ const PersonalPath = () => {
         {steps.map((step, index) => (
           <div className="path__item" key={index}>
             <div className="path__left">
-              <div className="path__title-text">{step.title}</div>
-              <div className="path__circle">{index + 1}</div>
+              <h3 className="path__title-text">{step.title}</h3>
+            </div>
+            <div className="path__middle">
+              <div
+                className={`path__circle path__circle-lined path__circle--desktop ${
+                  index % 2 === 0 ? "" : "path__circle--highlighted"
+                }`}
+              >
+                {index + 1}
+              </div>
             </div>
             <div
               className={`path__right ${
@@ -59,19 +78,13 @@ const PersonalPath = () => {
               <div className="path__item-title">
                 <div className="path__item-top-wrapper">
                   <div className="path__circle">{index + 1}</div>
-                  <img
-                    src={`/assets/icons/${step.icon}`}
-                    alt=""
-                    className="path__icon"
-                  />
+                  <img src={step.icon} alt="" className="path__icon" />
                 </div>
-
-                <h3 className="path__item-title-text">{step.title}</h3>
               </div>
-
+              <h3 className="path__item-title-text">{step.title}</h3>
               <div className="path__desc">{step.description}</div>
               <img
-                src={`/assets/icons/${step.icon}`}
+                src={step.icon}
                 alt=""
                 className="path__icon path__icon--desktop"
               />
