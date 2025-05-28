@@ -27,60 +27,89 @@ const Premium = () => {
   ];
 
   return (
-    <section className="premium">
-      <h2 className="premium__title">
-        Премиум-курс с гарантией осознанного роста
-      </h2>
+    <>
+      <div className="premium">
+        <section className="premium__section" id="premium">
+          <h2 className="premium__title">
+            Премиум-курс с гарантией осознанного роста
+          </h2>
 
-      <div className="premium__content--mobile">
-        {perks.map((perk, index) => (
-          <div className="premium__perk" key={index}>
-            <div className="premium__perk-image-wrapper">
-              <img
-                src={perk.image}
-                alt={perk.title}
-                className="premium__perk-image"
-              />
-              <h3 className="premium__perk-title">{perk.title}</h3>
-            </div>
-            <p className="premium__perk-description">
-              {perk.description.split("\n").map((line, i) => (
-                <span key={i}>{line}</span>
-              ))}
-            </p>
+          <div className="premium__content--mobile">
+            {perks.map((perk, index) => (
+              <div className="premium__perk" key={index}>
+                <div className="premium__perk-image-wrapper">
+                  <img
+                    src={perk.image}
+                    alt={perk.title}
+                    className="premium__perk-image"
+                  />
+                  <h3 className="premium__perk-title">{perk.title}</h3>
+                </div>
+
+                {perk.description.split("\n").map((line, i) => (
+                  <p key={i} className="premium__perk-description">
+                    {line}
+                  </p>
+                ))}
+              </div>
+            ))}
           </div>
-        ))}
+
+          <div className="premium__content--desktop">
+            <div className="premium__perk premium__item--text1">
+              <h3>{perks[0].title}</h3>
+              {perks[0].description.split("\n").map((line, i) => (
+                <p key={i} className="premium__perk-description">
+                  {line}
+                </p>
+              ))}
+            </div>
+
+            <div className="premium__item--img1">
+              <img
+                className="premium__image"
+                src={perks[2].image}
+                alt={perks[2].title}
+              />
+            </div>
+
+            <div className="premium__item--img2">
+              <img
+                className="premium__image premium__image--shifted"
+                src={perks[1].image}
+                alt={perks[1].title}
+              />
+            </div>
+
+            <div className="premium__item--img3">
+              <img
+                className="premium__image premium__image--large"
+                src={perks[0].image}
+                alt={perks[0].title}
+              />
+            </div>
+
+            <div className="premium__perk premium__item--text2">
+              <h3>{perks[1].title}</h3>
+              {perks[1].description.split("\n").map((line, i) => (
+                <p key={i} className="premium__perk-description">
+                  {line}
+                </p>
+              ))}
+            </div>
+
+            <div className="premium__perk premium__item--text3">
+              <h3>{perks[2].title}</h3>
+              {perks[2].description.split("\n").map((line, i) => (
+                <p key={i} className="premium__perk-description">
+                  {line}
+                </p>
+              ))}
+            </div>
+          </div>
+        </section>
       </div>
-
-      <div className="premium__content--desktop">
-        <div className="premium__text premium__item--text1">
-          <h3>{perks[0].title}</h3>
-          <p>{perks[0].description}</p>
-        </div>
-
-        <div className="premium__image premium__item--img1">
-          <img src={perks[0].image} alt={perks[1].title} />
-        </div>
-
-        <div className="premium__image premium__item--img2">
-          <img src={perks[1].image} alt={perks[2].title} />
-        </div>
-
-        <div className="premium__image premium__item--img3">
-          <img src={perks[2].image} alt={perks[0].title} />
-        </div>
-
-        <div className="premium__text premium__item--text2">
-          <h3>{perks[1].title}</h3>
-          <p>{perks[1].description}</p>
-        </div>
-
-        <div className="premium__text premium__item--text3">
-          <h3>{perks[2].title}</h3>
-          <p>{perks[2].description}</p>
-        </div>
-      </div>
-    </section>
+    </>
   );
 };
 
