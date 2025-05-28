@@ -61,15 +61,19 @@ const SignUpForm = () => {
 
   return (
     <section className="form" id="signup-form">
-      <img src={FormImage} alt="Форма регистрации" className="form__image" />
+      <img
+        src={FormImage}
+        alt="Форма регистрации"
+        className="form__image scroll-animate"
+      />
       <div className="form__wrapper">
-        <div className="form__title-wrapper">
+        <div className="form__title-wrapper scroll-animate">
           <h2 className="form__title">Записаться на тестирования</h2>
           <p className="form__description">
             Оставьте свой номер телефона и мы вам перезвоним в течение 15 минут
           </p>
         </div>
-        <form onSubmit={handleSubmit} className="form__form">
+        <form onSubmit={handleSubmit} className="form__form scroll-animate">
           <input
             type="text"
             placeholder="Имя"
@@ -93,7 +97,7 @@ const SignUpForm = () => {
         </form>
 
         {success && <p className="form__success">{success}</p>}
-        <p className="form__disclaimer">
+        <p className="form__disclaimer scroll-animate">
           Нажимая кнопку «Отправить», вы соглашаетесь с условиями{" "}
           <a
             href="https://cdn.prod.website-files.com/64478261f4af349e3807063b/65b3f00dfd6a5aa0bbaa62d7_%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BE%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B8_%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_1.docx"

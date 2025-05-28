@@ -28,22 +28,23 @@ const Track = () => {
 
   return (
     <section className="track">
-      <h2 className="track__title">Что вас ждет?</h2>
+      <h2 className="track__title scroll-animate">Что вас ждет?</h2>
       <div className="track__content">
         <ul className="track__benefits">
           {items.map(({ title, icon }, index) => (
             <li
               key={title}
-              className={`track__benefit ${
+              className={`track__benefit scroll-fade-up ${
                 index % 2 === 0 ? "track__benefit--even" : "track__benefit--odd"
               }`}
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
               <p>{title}</p>
               <img src={icon} alt={title} className="track__icon" />
             </li>
           ))}
         </ul>
-        <div className="track__image-wrapper">
+        <div className="track__image-wrapper scroll-animate">
           <img src={trackImage} alt="Student" className="track__image" />
         </div>
       </div>

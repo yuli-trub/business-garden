@@ -1,9 +1,21 @@
 import "./hero.scss";
 import heroImage from "../../assets/hero-img.jpg";
+import { useEffect, useRef } from "react";
 
 const HeroSection = () => {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (el) {
+      setTimeout(() => {
+        el.classList.add("visible");
+      }, 50);
+    }
+  }, []);
+
   return (
-    <section className="hero" id="hero">
+    <section className="hero fade-animate" id="hero" ref={sectionRef}>
       <div className="hero__content">
         <div className="hero__text-wrap">
           <h1 className="hero__title">

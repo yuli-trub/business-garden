@@ -7,15 +7,15 @@ const About = () => {
     <>
       <div className="about" id="about">
         <section className="about__wrapper">
-          <div className="about__title-wrapper">
-            <h2 className="about__title">О курсе</h2>
+          <div className="about__title-wrapper scroll-animate">
+            <h2 className="about__title ">О курсе</h2>
             <img
               src={titleunderline}
               alt="title underline"
               className="about__title-underline"
             />
           </div>
-          <div className="about__content">
+          <div className="about__content scroll-animate">
             <div className="about__image-wrapper about__image-wrapper--desktop">
               <img src={aboutImage} alt="Student" className="about__image" />
             </div>
@@ -30,7 +30,7 @@ const About = () => {
                   до личной эффективности.{" "}
                 </p>
               </div>
-              <div className="info-block">
+              <div className="info-block scroll-animate">
                 <h3 className="info-block__title">Интенсив на 3 месяца</h3>
                 <p className="info-block__description">
                   За 3 месяца ученики освоят ключевые дисциплины и научатся
@@ -41,7 +41,7 @@ const About = () => {
                   бизнес-задачи.
                 </p>
               </div>
-              <div className="about__image-wrapper about__image-wrapper--mobile">
+              <div className="about__image-wrapper about__image-wrapper--mobile scroll-animate">
                 <img src={aboutImage} alt="Student" className="about__image" />
               </div>
             </div>

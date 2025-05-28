@@ -47,8 +47,8 @@ const PersonalPath = () => {
 
   return (
     <section className="path" id="personal-track">
-      <div className="path__title-wrapper">
-        <h2 className="path__title">Персональный трек</h2>
+      <div className="path__title-wrapper scroll-animate">
+        <h2 className="path__title ">Персональный трек</h2>
         <img
           src={TitleUnderline}
           alt="title underline"
@@ -57,11 +57,15 @@ const PersonalPath = () => {
       </div>
       <div className="path__list">
         {steps.map((step, index) => (
-          <div className="path__item" key={index}>
-            <div className="path__left">
+          <div
+            className="path__item"
+            key={index}
+            style={{ transitionDelay: `${index * 500}ms` }}
+          >
+            <div className="path__left scroll-fade-up">
               <h3 className="path__title-text">{step.title}</h3>
             </div>
-            <div className="path__middle">
+            <div className="path__middle scroll-fade-up">
               <div
                 className={`path__circle path__circle-lined path__circle--desktop ${
                   index % 2 === 0 ? "" : "path__circle--highlighted"
@@ -71,7 +75,7 @@ const PersonalPath = () => {
               </div>
             </div>
             <div
-              className={`path__right ${
+              className={`path__right scroll-fade-up ${
                 index % 2 === 0 ? "path__right--highlighted" : ""
               }`}
             >

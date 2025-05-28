@@ -88,7 +88,7 @@ const Program = () => {
   return (
     <div id="program">
       <section className="program">
-        <div className="program__title-wrapper">
+        <div className="program__title-wrapper scroll-animate">
           <h2 className="program__title">Программа курса</h2>
           <div className="program__arrows-wrapper">
             <img
@@ -109,9 +109,10 @@ const Program = () => {
         <div className="program__content" ref={scrollRef}>
           {items.map((item, index) => (
             <div
-              className="program__slide"
+              className="program__slide scroll-animate"
               key={index}
               ref={index === 0 ? slideRef : null}
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
               <h3 className="program__item-title">{item.title}</h3>
               <p className="program__item-description">{item.description}</p>
@@ -121,7 +122,7 @@ const Program = () => {
             </div>
           ))}
         </div>
-        <div className="program__dots">
+        <div className="program__dots scroll-animate">
           {items.map((_, index) => (
             <span
               key={index}

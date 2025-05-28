@@ -39,8 +39,10 @@
         visibility: visible;
         max-height: 500px;
         padding: 16px 32px;
+        padding-top: 0;
         @include mobile {
           padding: 16px;
+          padding-top: 0;
         }
       }
     }
@@ -107,7 +109,7 @@
   &__answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.2s ease;
+    transition: max-height 0.4s ease, padding 0.4s ease;
     color: $color-text;
     text-align: left;
     font-size: 18px;
@@ -115,5 +117,20 @@
     @include mobile {
       font-size: 12px;
     }
+  }
+
+  &__answer-list {
+    @include flex(center, stretch, column, 16px);
+    list-style: inside;
+    list-style-type: disc;
+    list-style-position: outside;
+    @include mobile {
+      gap: 8px;
+    }
+  }
+
+  &__answer-list-item {
+    list-style-type: disc;
+    margin-left: 25px;
   }
 }

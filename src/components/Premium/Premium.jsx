@@ -13,7 +13,7 @@ const Premium = () => {
       image: LaptopGuyImage,
     },
     {
-      title: "Адекватная нагрузка",
+      title: "Оптимальная нагрузка",
       description:
         "Курс рассчитан на 60 академических часов, равномерно распределённых на лето (3 месяца). Такой формат позволяет пройти обучение без перегрузки в период каникул.",
       image: PhoneGirlImage,
@@ -30,24 +30,29 @@ const Premium = () => {
     <>
       <div className="premium">
         <section className="premium__section" id="premium">
-          <h2 className="premium__title">
+          <h2 className="premium__title scroll-animate">
             Премиум-курс с гарантией осознанного роста
           </h2>
 
           <div className="premium__content--mobile">
             {perks.map((perk, index) => (
-              <div className="premium__perk" key={index}>
-                <div className="premium__perk-image-wrapper">
+              <div className="premium__perk " key={index}>
+                <div className="premium__perk-image-wrapper scroll-animate">
                   <img
                     src={perk.image}
                     alt={perk.title}
                     className="premium__perk-image"
                   />
-                  <h3 className="premium__perk-title">{perk.title}</h3>
+                  <h3 className="premium__perk-title scroll-animate">
+                    {perk.title}
+                  </h3>
                 </div>
 
                 {perk.description.split("\n").map((line, i) => (
-                  <p key={i} className="premium__perk-description">
+                  <p
+                    key={i}
+                    className="premium__perk-description scroll-animate"
+                  >
                     {line}
                   </p>
                 ))}
@@ -56,7 +61,7 @@ const Premium = () => {
           </div>
 
           <div className="premium__content--desktop">
-            <div className="premium__perk premium__item--text1">
+            <div className="premium__perk scroll-animate premium__item--text1">
               <h3>{perks[0].title}</h3>
               {perks[0].description.split("\n").map((line, i) => (
                 <p key={i} className="premium__perk-description">
@@ -65,7 +70,7 @@ const Premium = () => {
               ))}
             </div>
 
-            <div className="premium__item--img1">
+            <div className="premium__item--img1 scroll-animate">
               <img
                 className="premium__image"
                 src={perks[2].image}
@@ -73,7 +78,7 @@ const Premium = () => {
               />
             </div>
 
-            <div className="premium__item--img2">
+            <div className="premium__item--img2 scroll-animate">
               <img
                 className="premium__image premium__image--shifted"
                 src={perks[1].image}
@@ -81,7 +86,7 @@ const Premium = () => {
               />
             </div>
 
-            <div className="premium__item--img3">
+            <div className="premium__item--img3 scroll-animate">
               <img
                 className="premium__image premium__image--large"
                 src={perks[0].image}
@@ -89,7 +94,7 @@ const Premium = () => {
               />
             </div>
 
-            <div className="premium__perk premium__item--text2">
+            <div className="premium__perk scroll-animate premium__item--text2">
               <h3>{perks[1].title}</h3>
               {perks[1].description.split("\n").map((line, i) => (
                 <p key={i} className="premium__perk-description">
@@ -98,7 +103,7 @@ const Premium = () => {
               ))}
             </div>
 
-            <div className="premium__perk premium__item--text3">
+            <div className="premium__perk  scroll-animate premium__item--text3">
               <h3>{perks[2].title}</h3>
               {perks[2].description.split("\n").map((line, i) => (
                 <p key={i} className="premium__perk-description">

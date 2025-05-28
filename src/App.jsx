@@ -11,8 +11,10 @@ import FAQ from "./components/FAQ/FAQ";
 import Advantages from "./components/Advantages/Advantages";
 import SignUpForm from "./components/SignUpForm/SignUpForm";
 import Footer from "./components/Footer/Footer";
+import scrollAnnimate from "./utils/ScrollAnimation";
 
 function App() {
+  scrollAnnimate();
   return (
     <>
       <Header />

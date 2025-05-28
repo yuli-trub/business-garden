@@ -1,11 +1,39 @@
 import "./footer.scss";
 import WhatsAppIcon from "../../assets/wa-icon.svg";
 import TelegramIcon from "../../assets/tg-icon.svg";
+import Logo from "../../assets/logo.svg";
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__links">
+        <div className="footer__externals">
+          <a
+            href="https://www.truetutoring.ru/"
+            target="blank"
+            className="footer__logo footer__logo--mobile"
+          >
+            <img src={Logo} alt="TrueTutoring Logo" />
+          </a>
+          <div className="footer__socials footer__socials--mobile">
+            <a href="https://t.me/TrueTutoring" className="footer__social-link">
+              <img src={TelegramIcon} alt="Telegram" />
+            </a>
+            <a
+              href="https://wa.me/+79651016885"
+              className="footer__social-link"
+            >
+              <img src={WhatsAppIcon} alt="WhatsApp" />
+            </a>
+          </div>
+        </div>
+        <a
+          href="https://www.truetutoring.ru/"
+          target="blank"
+          className="footer__logo footer__logo--desktop"
+        >
+          <img src={Logo} alt="TrueTutoring Logo" />
+        </a>
         <a href="#about" className="footer__link">
           О курсе
         </a>
@@ -22,7 +50,7 @@ const Footer = () => {
           Наши преимущества
         </a>
 
-        <div className="footer__socials">
+        <div className="footer__socials footer__socials--desktop">
           <a href="https://t.me/TrueTutoring" className="footer__social-link">
             <img src={TelegramIcon} alt="Telegram" />
           </a>

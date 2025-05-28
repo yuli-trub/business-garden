@@ -57,7 +57,7 @@ const Advantages = () => {
     <>
       <div id="advantages">
         <section className="advantages">
-          <div className="advantages__title-wrapper">
+          <div className="advantages__title-wrapper scroll-animate">
             <h2 className="advantages__title">Преимущество работать с нами?</h2>
             <img
               src={TitleUnderline}
@@ -68,7 +68,11 @@ const Advantages = () => {
 
           <div className="advantages__list advantages__list--desktop ">
             {advantages.map((advantage, index) => (
-              <div className="advantages__item" key={index}>
+              <div
+                className="advantages__item scroll-animate"
+                key={index}
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
                 <img
                   src={advantage.image}
                   alt={advantage.title}
@@ -92,11 +96,12 @@ const Advantages = () => {
           >
             {advantages.map((advantage, index) => (
               <div
-                className="advantages__slide"
+                className="advantages__slide scroll-animate"
                 key={index}
                 ref={index === 0 ? slideRef : null}
+                style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="advantages__item" key={index}>
+                <div className="advantages__item " key={index}>
                   <img
                     src={advantage.image}
                     alt={advantage.title}

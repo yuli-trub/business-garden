@@ -2,6 +2,7 @@
 @import "../../styles/mixins";
 
 .footer {
+  position: relative;
   @include mobile {
     border-top: 2px solid $color-border-dark;
   }
@@ -9,7 +10,7 @@
   &__links {
     @include flex(space-between, center, column, 16px);
     gap: 1rem;
-    padding: 48px 2rem;
+    padding: 48px 0;
     background: $color-bg;
     border-bottom: 2px solid $color-border-dark;
 
@@ -34,11 +35,21 @@
   &__socials {
     @include flex(space-between, center);
     gap: 16px;
-    margin-top: 16px;
     @include desktop {
       position: absolute;
       right: 0;
       gap: 24px;
+    }
+
+    &--desktop {
+      @include mobile {
+        display: none;
+      }
+    }
+    &--mobile {
+      @include desktop {
+        display: none;
+      }
     }
   }
 
@@ -54,6 +65,36 @@
 
     @include desktop {
       @include flex(space-between, center, row);
+    }
+  }
+
+  &__logo {
+    width: 120px;
+    height: 40px;
+    z-index: 1000;
+    cursor: pointer;
+    @include desktop {
+      position: absolute;
+      left: 0;
+    }
+
+    &--mobile {
+      @include desktop {
+        display: none;
+      }
+    }
+    &--desktop {
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+
+  &__externals {
+    @include mobile {
+      width: 100%;
+      @include flex(space-between, center, row);
+      margin-bottom: 16px;
     }
   }
 }
