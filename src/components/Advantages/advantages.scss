@@ -2,70 +2,77 @@
 @import "../../styles/mixins";
 
 .advantages {
-  padding: 2rem 1rem;
+  border-radius: 48px;
+  background-color: $color-bg-secondary;
+  padding: 100px;
+  margin: 100px auto;
+  @include mobile {
+    padding: 48px 16px;
+    margin: 48px 0;
+  }
 
   &__title-wrapper {
-    text-align: center;
-    margin-bottom: 2rem;
+    text-align: left;
+    margin-bottom: 18px;
 
-    .advantages__title {
-      font-size: 2rem;
-      color: $color-primary;
+    @include mobile {
+      margin-bottom: 32px;
     }
 
     .advantages__title-underline {
-      margin-top: 0.5rem;
-      height: 8px;
+      width: 470px;
+      margin-top: 19px;
+      @include mobile {
+        display: none;
+      }
     }
-  }
-
-  &__list {
-    display: none;
   }
 
   // ----------------------------------
   // Desktop version
   // ----------------------------------
   &__list--desktop {
-    display: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
 
-    @include desktop {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
+    @include mobile {
+      display: none;
     }
   }
 
   &__item {
-    background: #f9f9f9;
-    border-radius: 16px;
-    padding: 1.5rem;
+    background: $color-bg;
+    border-radius: 24px;
+    padding: 32px 12px 64px 16px;
     text-align: left;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    height: 100%;
+    @include flex(flex-start, stretch, column, 32px);
 
-    h3 {
-      font-size: 1.1rem;
-      margin: 1rem 0 0.5rem;
-      color: $color-primary;
-    }
-
-    p {
-      font-size: 0.95rem;
-      line-height: 1.5;
-      color: $color-text;
-      white-space: pre-line; // preserves \n
+    @include mobile {
+      padding: 32px 16px 45px 16px;
+      min-height: 430px;
+      gap: 16px;
     }
   }
 
+  &__item-title {
+    @include mobile {
+      min-height: 50px;
+      margin-top: 16px;
+    }
+  }
+
+  &__text {
+    @include flex(center, center, column, 32px);
+    @include mobile {
+      gap: 16px;
+    }
+  }
   &__image {
-    width: 100%;
-    border-radius: 12px;
-    object-fit: cover;
+    border-radius: 24px 24px 0 0;
+    max-height: 140px;
   }
 
   // ----------------------------------
@@ -76,7 +83,6 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 1rem;
-    padding-bottom: 1rem;
 
     &::-webkit-scrollbar {
       display: none;

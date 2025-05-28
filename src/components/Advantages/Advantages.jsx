@@ -1,8 +1,9 @@
 import "./advantages.scss";
 import advantageImage1 from "../../assets/adv1.png";
 import advantageImage2 from "../../assets/adv2.png";
-
 import advantageImage3 from "../../assets/adv3.png";
+import TitleUnderline from "../../assets/title-underline-blue.svg";
+
 import { useEffect, useRef, useState } from "react";
 
 const Advantages = () => {
@@ -14,15 +15,15 @@ const Advantages = () => {
       image: advantageImage1,
     },
     {
-      title: "Премиум-курс с гарантией осознанного роста",
+      title: "Индивидуальный подход",
       description:
-        "Курс охватывает темы маркетинга, финансов, предпринимательства и права.",
+        "В основе нашей работы — индивидуальный подход. Мы не даём шаблонных решений. Каждый курс мы проектируем с учётом возраста, уровня подготовки и личных интересов ученика. \n Мы подбираем преподавателей не только по опыту и компетенциям, но и по личностному совпадению с ребёнком — чтобы занятия были в радость и приносили результат.",
       image: advantageImage2,
     },
     {
-      title: "Премиум-курс с гарантией осознанного роста",
+      title: "Профессиональное обучение",
       description:
-        "Курс охватывает темы маркетинга, финансов, предпринимательства и права.",
+        "Если вы ищете не просто очередной курс, а осмысленное, профессионально выстроенное обучение, где с ребёнком работают опытные и внимательные преподаватели, — мы предлагаем именно такой подход.  \n Наша задача — не просто дать знания, а помочь подростку раскрыться, научиться мыслить, принимать решения и с уверенностью двигаться вперёд.",
       image: advantageImage3,
     },
   ];
@@ -31,7 +32,6 @@ const Advantages = () => {
   const slideRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // track scroll for dot indicators
   const handleScroll = () => {
     const scrollX = scrollRef.current.scrollLeft;
     const width = scrollRef.current.offsetWidth;
@@ -54,68 +54,80 @@ const Advantages = () => {
   };
 
   return (
-    <section className="advantages">
-      <div className="advantages__title-wrapper">
-        <h2 className="advantages__title">О курсе</h2>
-        <img
-          // src={titleunderline}
-          alt="title underline"
-          className="advantages__title-underline"
-        />
-      </div>
-
-      <div className="advantages__list advantages__list--desktop ">
-        {advantages.map((advantage, index) => (
-          <div className="advantages__item" key={index}>
+    <>
+      <div id="advantages">
+        <section className="advantages">
+          <div className="advantages__title-wrapper">
+            <h2 className="advantages__title">Преимущество работать с нами?</h2>
             <img
-              src={advantage.image}
-              alt={advantage.title}
-              className="advantages__image"
+              src={TitleUnderline}
+              alt="title underline"
+              className="advantages__title-underline"
             />
-            <h3 className="advantages__item-title">{advantage.title}</h3>
-            <p className="advantages__item-description">
-              {advantage.description}
-            </p>
           </div>
-        ))}
-      </div>
 
-      <div
-        className="advantages__list advantages__list--mobile"
-        ref={scrollRef}
-      >
-        {advantages.map((advantage, index) => (
-          <div
-            className="advantages__slide"
-            key={index}
-            ref={index === 0 ? slideRef : null}
-          >
-            <div className="advantages__item" key={index}>
-              <img
-                src={advantage.image}
-                alt={advantage.title}
-                className="advantages__image"
-              />
-              <h3 className="advantages__item-title">{advantage.title}</h3>
-              <p className="advantages__item-description">
-                {advantage.description}
-              </p>
-            </div>
+          <div className="advantages__list advantages__list--desktop ">
+            {advantages.map((advantage, index) => (
+              <div className="advantages__item" key={index}>
+                <img
+                  src={advantage.image}
+                  alt={advantage.title}
+                  className="advantages__image"
+                />
+                <h3 className="advantages__item-title">{advantage.title}</h3>
+                <div className="advantages__text">
+                  {advantage.description.split("\n").map((line, i) => (
+                    <p key={i} className="advantages__item-description">
+                      {line}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+
+          <div
+            className="advantages__list advantages__list--mobile"
+            ref={scrollRef}
+          >
+            {advantages.map((advantage, index) => (
+              <div
+                className="advantages__slide"
+                key={index}
+                ref={index === 0 ? slideRef : null}
+              >
+                <div className="advantages__item" key={index}>
+                  <img
+                    src={advantage.image}
+                    alt={advantage.title}
+                    className="advantages__image"
+                  />
+                  <h3 className="advantages__item-title">{advantage.title}</h3>
+                  <div className="advantages__text">
+                    {advantage.description.split("\n").map((line, i) => (
+                      <p key={i} className="advantages__item-description">
+                        {line}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="advantages__dots">
+            {advantages.map((_, index) => (
+              <span
+                key={index}
+                className={`advantages__dot ${
+                  index === activeIndex ? "active" : ""
+                }`}
+                onClick={() => scrollToIndex(index)}
+              />
+            ))}
+          </div>
+        </section>
       </div>
-      <div className="advantages__dots">
-        {advantages.map((_, index) => (
-          <span
-            key={index}
-            className={`advantages__dot ${
-              index === activeIndex ? "active" : ""
-            }`}
-            onClick={() => scrollToIndex(index)}
-          />
-        ))}
-      </div>
-    </section>
+    </>
   );
 };
 
