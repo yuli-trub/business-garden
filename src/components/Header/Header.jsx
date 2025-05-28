@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./Header.scss";
+import "./header.scss";
 import WhatsAppIcon from "../../assets/wa-icon.svg";
 import TelegramIcon from "../../assets/tg-icon.svg";
 
