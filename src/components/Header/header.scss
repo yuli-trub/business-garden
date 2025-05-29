@@ -2,9 +2,16 @@
 @import "../../styles/mixins";
 
 .header {
-  background: $color-bg;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
   z-index: $z-header;
   padding: 14px 16px 0 16px;
+  position: sticky;
+  top: 0;
+
+  max-width: none;
 
   &__container {
     @include flex(space-between, center);
@@ -58,8 +65,8 @@
   }
 
   &__btn {
-    @include button-style;
     margin-top: 16px;
+    @include button-style;
     &--desktop {
       margin-top: 0px;
       @media (max-width: 1024px) {
@@ -81,7 +88,7 @@
     @include flex(space-between, center, column, 16px);
     gap: 1rem;
     padding: 0 2rem;
-    background: $color-bg;
+    // background: $color-bg;
   }
   &__nav-mobile {
     overflow: hidden;
@@ -92,7 +99,7 @@
 
     &.open {
       max-height: 500px;
-      opacity: 1;
+      opacity: 0.9;
       transform: translateY(0);
       padding-top: 1rem;
       padding-bottom: 1rem;

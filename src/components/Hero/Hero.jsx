@@ -33,7 +33,12 @@ const HeroSection = () => {
         </a>
       </div>
       <div className="hero__image-wrapper">
-        <img src={heroImage} alt="Student" className="hero__image" />
+        <img
+          src={heroImage}
+          alt="Student"
+          className="hero__image"
+          // loading="lazy"
+        />
       </div>
     </section>
   );
