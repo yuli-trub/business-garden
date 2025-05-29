@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./signUpForm.scss";
 import FormImage from "../../assets/form-image.jpg";
+import { parsePhoneNumberFromString } from "libphonenumber-js";
 
 const SignUpForm = () => {
   const [name, setName] = useState("");
@@ -8,21 +9,20 @@ const SignUpForm = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  const BOT_TOKEN = "YOUR_BOT_TOKEN";
-  const CHAT_ID = "YOUR_CHAT_ID";
-
   const validate = () => {
     if (!name.trim()) {
       setError("Введите имя");
       return false;
     }
-    const phoneRegex =
-      /^\+7\s?\(?\d{3}\)?[\s\-]?\d{3}[\s\-]?\d{2}[\s\-]?\d{2}$/;
-    if (!phoneRegex.test(phone)) {
+
+    const phoneNumber = parsePhoneNumberFromString(phone, "RU");
+    if (!phoneNumber || !phoneNumber.isValid()) {
       setError("Введите корректный номер телефона");
-      setPhone("");
       return false;
     }
+
+    setPhone(phoneNumber.formatInternational());
+
     setError("");
     return true;
   };
@@ -31,20 +31,14 @@ const SignUpForm = () => {
     e.preventDefault();
     if (!validate()) return;
 
-    const text = `📬 Новая заявка:\n👤 Имя: ${name}\n📞 Телефон: ${phone}`;
+    const text = `📬 Новая заявка c Business Garden:\n👤 Имя: ${name}\n📞 Телефон: ${phone}`;
 
     try {
-      const res = await fetch(
-        `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            chat_id: CHAT_ID,
-            text,
-          }),
-        }
-      );
+      const res = await fetch("/api/send-message", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, phone }),
+      });
 
       if (res.ok) {
         setSuccess("Спасибо! Мы вам скоро перезвоним.");
