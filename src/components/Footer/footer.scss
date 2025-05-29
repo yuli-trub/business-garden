@@ -72,10 +72,14 @@
     width: 120px;
     height: 40px;
     z-index: 1000;
+
     cursor: pointer;
     @include desktop {
       position: absolute;
       left: 0;
+    }
+    img {
+      border-radius: 0px !important;
     }
 
     &--mobile {

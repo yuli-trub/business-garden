@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./signUpForm.scss";
-import FormImage from "../../assets/form-image.jpg";
+import FormImage from "../../assets/form-image.webp";
 import { parsePhoneNumberFromString } from "libphonenumber-js";
 
 const SignUpForm = () => {
@@ -34,10 +34,10 @@ const SignUpForm = () => {
     const text = `📬 Новая заявка c Business Garden:\n👤 Имя: ${name}\n📞 Телефон: ${phone}`;
 
     try {
-      const res = await fetch("/api/send-message", {
+      const res = await fetch("/send-message.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, phone }),
+        body: JSON.stringify({ text }),
       });
 
       if (res.ok) {

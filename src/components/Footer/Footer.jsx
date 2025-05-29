@@ -1,7 +1,7 @@
 import "./footer.scss";
-import WhatsAppIcon from "../../assets/wa-icon.svg";
-import TelegramIcon from "../../assets/tg-icon.svg";
-import Logo from "../../assets/logo.svg";
+import WhatsAppIcon from "../../assets/icons/wa-icon.svg";
+import TelegramIcon from "../../assets/icons/tg-icon.svg";
+import Logo from "../../assets/icons/logo.svg";
 
 const Footer = () => {
   return (

@@ -1,11 +1,11 @@
 import "./PersonalPath.scss";
-import TitleUnderline from "../../assets/title-underline-blue.svg";
-import BulbIcon from "../../assets/bulb-icon.svg";
-import PlusTextIcon from "../../assets/plus-text-icon.svg";
-import MessageIcon from "../../assets/message-icon.svg";
-import GlassesIcon from "../../assets/glasses-icon.svg";
-import QuestionIcon from "../../assets/question-text-icon.svg";
-import BatteryIcon from "../../assets/battery-icon.svg";
+import TitleUnderline from "../../assets/icons/title-underline-blue.svg";
+import BulbIcon from "../../assets/icons/bulb-icon.svg";
+import PlusTextIcon from "../../assets/icons/plus-text-icon.svg";
+import MessageIcon from "../../assets/icons/message-icon.svg";
+import GlassesIcon from "../../assets/icons/glasses-icon.svg";
+import QuestionIcon from "../../assets/icons/question-text-icon.svg";
+import BatteryIcon from "../../assets/icons/battery-icon.svg";
 
 const PersonalPath = () => {
   const steps = [

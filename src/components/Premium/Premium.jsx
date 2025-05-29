@@ -1,8 +1,8 @@
 import "./premium.scss";
 
-import LaptopGuyImage from "../../assets/laptop-guy.png";
-import YellowBookImage from "../../assets/yellow-book.png";
-import PhoneGirlImage from "../../assets/phone-girl.png";
+import LaptopGuyImage from "../../assets/laptop-guy.webp";
+import YellowBookImage from "../../assets/yellow-book.webp";
+import PhoneGirlImage from "../../assets/phone-girl.webp";
 
 const Premium = () => {
   const perks = [

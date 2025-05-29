@@ -1,6 +1,6 @@
 import "./program.scss";
-import leftarrow from "../../assets/arrow-left.svg";
-import rightarrow from "../../assets/arrow-right.svg";
+import leftarrow from "../../assets/icons/arrow-left.svg";
+import rightarrow from "../../assets/icons/arrow-right.svg";
 import { useRef, useState, useEffect } from "react";
 
 const Program = () => {

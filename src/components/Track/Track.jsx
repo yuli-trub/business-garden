@@ -1,10 +1,10 @@
 import "./track.scss";
-import hatIcon from "../../assets/hat-icon.svg";
-import boardIcon from "../../assets/board-icon.svg";
-import cupIcon from "../../assets/cup-icon.svg";
-import museumIcon from "../../assets/museum-icon.svg";
+import hatIcon from "../../assets/icons/hat-icon.svg";
+import boardIcon from "../../assets/icons/board-icon.svg";
+import cupIcon from "../../assets/icons/cup-icon.svg";
+import museumIcon from "../../assets/icons/museum-icon.svg";
 
-import trackImage from "../../assets/track-image.png";
+import trackImage from "../../assets/track-image.webp";
 
 const Track = () => {
   const items = [

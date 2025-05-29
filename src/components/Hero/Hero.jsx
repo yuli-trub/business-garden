@@ -1,5 +1,5 @@
 import "./hero.scss";
-import heroImage from "../../assets/hero-img.jpg";
+import heroImage from "../../assets/hero-img.webp";
 import { useEffect, useRef } from "react";
 
 const HeroSection = () => {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./header.scss";
-import WhatsAppIcon from "../../assets/wa-icon.svg";
-import TelegramIcon from "../../assets/tg-icon.svg";
+import WhatsAppIcon from "../../assets/icons/wa-icon.svg";
+import TelegramIcon from "../../assets/icons/tg-icon.svg";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);

@@ -1,6 +1,6 @@
 import "./about.scss";
-import aboutImage from "../../assets/about-img.jpg";
-import titleunderline from "../../assets/title-underline.svg";
+import aboutImage from "../../assets/about-img.webp";
+import titleunderline from "../../assets/icons/title-underline.svg";
 
 const About = () => {
   return (

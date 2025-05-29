@@ -1,8 +1,8 @@
 import "./advantages.scss";
-import advantageImage1 from "../../assets/adv1.png";
-import advantageImage2 from "../../assets/adv2.png";
-import advantageImage3 from "../../assets/adv3.png";
-import TitleUnderline from "../../assets/title-underline-blue.svg";
+import advantageImage1 from "../../assets/adv1.webp";
+import advantageImage2 from "../../assets/adv2.webp";
+import advantageImage3 from "../../assets/adv3.webp";
+import TitleUnderline from "../../assets/icons/title-underline-blue.svg";
 
 import { useEffect, useRef, useState } from "react";
 
